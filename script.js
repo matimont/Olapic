@@ -8,17 +8,18 @@ xmlhttp.onload = function () {
 		
 		const widget_container = document.getElementById('tease--image-wrapper');
 	
-		//const image_header_div = document.createElement('div');
-      //	image_header_div.setAttribute('class', 'image_header');
-		
+		const div_6_1 = document.createElement('div');
+		div_6_1.setAttribute('class', 'col-md-2');
+				
 		const avatar = document.createElement('img');
 		avatar.src=myObj.data._embedded.uploader.avatar_url;
 		
-				//User who uploaded the image
+        const div_6_2 = document.createElement('div');
+		div_6_2.setAttribute('class', 'col-md-10');
+
 		const user = document.createElement('h3');
 		user.textContent = myObj.data._embedded.uploader.username;
-				//Avatar
-	//widget_container.appendChild(image_header_div);	
+
 	 
 		const main_image = document.createElement('img');
 		main_image.src = myObj.data.images.normal;
@@ -26,8 +27,11 @@ xmlhttp.onload = function () {
 		const dateP = document.createElement('h3');
 		dateP.textContent = myObj.data.date_published;
 		
-		widget_container.appendChild(avatar);
-		widget_container.appendChild(user);
+		div_6_1.appendChild(avatar);
+		div_6_2.appendChild(user);
+		widget_container.appendChild(div_6_1);
+		widget_container.appendChild(div_6_2);
+		//widget_container.appendChild(user);
 		widget_container.appendChild(main_image);
 		widget_container.appendChild(dateP);
 		
