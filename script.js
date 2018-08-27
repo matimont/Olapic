@@ -35,6 +35,8 @@ xmlhttp.onload = function () {
 		
 		div_6_1.appendChild(avatar);
 		div_6_2.appendChild(user);
+		widget_container.style.backgroundImage='none';
+		
 		widget_container.appendChild(div_6_1);
 		widget_container.appendChild(div_6_2);
 		//widget_container.appendChild(user);
