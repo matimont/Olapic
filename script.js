@@ -6,7 +6,7 @@ xmlhttp.onload = function () {
 	if (this.readyState == 4 && this.status == 200) {
 		var myObj = JSON.parse(this.responseText);
 		
-		const widget_container = document.getElementById('tease--image-wrapper');
+		const widget_container = document.getElementsByClassName('tease--image-wrapper');
 	
 		const div_6_1 = document.createElement('div');
 		div_6_1.setAttribute('class', 'col-md-2');
