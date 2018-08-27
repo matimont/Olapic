@@ -9,23 +9,29 @@ xmlhttp.onload = function () {
 		const widget_container = document.getElementsByClassName('tease--image-wrapper')[0];
 	
 		const div_6_1 = document.createElement('div');
-		div_6_1.setAttribute('class', 'col-md-2');
+		div_6_1.setAttribute('style', 'width:48px; float:left');
 				
 		const avatar = document.createElement('img');
 		avatar.src=myObj.data._embedded.uploader.avatar_url;
 		
         const div_6_2 = document.createElement('div');
-		div_6_2.setAttribute('class', 'col-md-10');
+		div_6_2.setAttribute('style', 'float:left; padding-top:15px');
 
-		const user = document.createElement('h3');
+		const user = document.createElement('h5');
 		user.textContent = myObj.data._embedded.uploader.username;
 
 	 
 		const main_image = document.createElement('img');
 		main_image.src = myObj.data.images.normal;
 		
-		const dateP = document.createElement('h3');
-		dateP.textContent = myObj.data.date_published;
+		const dateP = document.createElement('h5');
+		var Dpublished = new Date(myObj.data.date_published);
+		var month = Dpublished.getMonth();
+		var day = Dpublished.getDay();
+		var year = Dpublished.getFullYear();
+		
+		dateP.textContent = month+ '-' + day + '-' + year;
+		
 		
 		div_6_1.appendChild(avatar);
 		div_6_2.appendChild(user);
